@@ -1,0 +1,270 @@
+{
+  "workflow_state": {
+    "current_step": "base_filtering",
+    "previous_step": "input_structuring",
+    "next_recommended_step": "missing_info_gap_check",
+    "can_proceed_to_validation": false
+  },
+  "base_control_decisions": [
+    {
+      "control_id": "AIS-01",
+      "control_title": "Application and Interface Security Policy and Procedures",
+      "control_domain": "Application Security",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Agentic AI system with tool/API invocation directly implies application and interface exposure requiring security controls.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "AIS-08",
+      "control_title": "Input Validation",
+      "control_domain": "Application Security",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Prompt/tool input handling is inherent in agentic systems and explicitly a concern.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "AIS-09",
+      "control_title": "Output Validation",
+      "control_domain": "Application Security",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Agent outputs and tool responses require validation due to misuse risk.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "STA-01",
+      "control_title": "Supply Chain Risk Management Policies and Procedures",
+      "control_domain": "Supply Chain",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "External model provider (Claude) and framework usage introduce supply chain risk.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "STA-03",
+      "control_title": "SSRM Supply Chain",
+      "control_domain": "Supply Chain",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Third-party dependencies require supply chain control coverage.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "STA-08",
+      "control_title": "Supply Chain Inventory",
+      "control_domain": "Supply Chain",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Relevant but unclear if inventory exists.",
+      "missing_dependency": "Existence of AI and vendor inventory",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "STA-09",
+      "control_title": "Supply Chain Risk Management",
+      "control_domain": "Supply Chain",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Direct exposure to third-party AI providers.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "LOG-01",
+      "control_title": "Logging and Monitoring Policy and Procedures",
+      "control_domain": "Logging & Monitoring",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Monitoring is explicitly stated as a concern.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "LOG-07",
+      "control_title": "Logging Scope",
+      "control_domain": "Logging & Monitoring",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Logging scope unclear.",
+      "missing_dependency": "Logging implementation scope",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "LOG-08",
+      "control_title": "Log Records",
+      "control_domain": "Logging & Monitoring",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Details of logged data unknown.",
+      "missing_dependency": "Logging implementation details",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "DSP-03",
+      "control_title": "Data Inventory",
+      "control_domain": "Data Protection",
+      "decision": "Need More Info",
+      "confidence": "High",
+      "reason": "Critical for lifecycle governance but not confirmed.",
+      "missing_dependency": "Existence of data inventory",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "DSP-04",
+      "control_title": "Data Classification",
+      "control_domain": "Data Protection",
+      "decision": "Need More Info",
+      "confidence": "High",
+      "reason": "Depends on unknown data sensitivity.",
+      "missing_dependency": "Data types and sensitivity",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "DSP-07",
+      "control_title": "Data Protection by Design and Default",
+      "control_domain": "Data Protection",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Depends on whether sensitive data is processed.",
+      "missing_dependency": "Presence of sensitive data",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "DSP-16",
+      "control_title": "Data Retention and Deletion",
+      "control_domain": "Data Protection",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Lifecycle practices unclear.",
+      "missing_dependency": "Retention practices",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "DSP-17",
+      "control_title": "Sensitive Data Protection",
+      "control_domain": "Data Protection",
+      "decision": "Need More Info",
+      "confidence": "High",
+      "reason": "Depends entirely on data sensitivity.",
+      "missing_dependency": "Sensitive data presence",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "GRC-01",
+      "control_title": "Governance Program Policy and Procedures",
+      "control_domain": "Governance",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Governance is explicitly a core concern.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "GRC-02",
+      "control_title": "Risk Management Program",
+      "control_domain": "Governance",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Agentic AI introduces inherent risk requiring programmatic management.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "GRC-06",
+      "control_title": "Governance Responsibility Model",
+      "control_domain": "Governance",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Ownership model across vendors unclear.",
+      "missing_dependency": "Responsibility model definition",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "GRC-09",
+      "control_title": "Acceptable Use of the AI Service",
+      "control_domain": "Governance",
+      "decision": "Need More Info",
+      "confidence": "Medium",
+      "reason": "Depends on user exposure.",
+      "missing_dependency": "User-facing scope",
+      "source_agent": "Base Set Filtering Agent"
+    },
+    {
+      "control_id": "TVM-12",
+      "control_title": "Threat Analysis and Modelling",
+      "control_domain": "Threat Management",
+      "decision": "Keep",
+      "confidence": "High",
+      "reason": "Agentic system risks require threat modelling.",
+      "missing_dependency": "",
+      "source_agent": "Base Set Filtering Agent"
+    }
+  ],
+  "base_filtering_summary": {
+    "controls_reviewed": 67,
+    "keep": 10,
+    "proposed_remove": 0,
+    "need_more_info": 10,
+    "baseline_only": 47,
+    "manual_review_required": 0,
+    "baseline_only_control_ids": [
+      "IAM-01","IAM-02","IAM-04","IAM-05","IAM-06","IAM-07","IAM-16",
+      "DSP-01","DSP-02","DSP-12","DSP-15","DSP-19",
+      "UEM-01","UEM-04","UEM-05","UEM-06","UEM-07","UEM-08","UEM-09","UEM-10",
+      "STA-02","STA-10","STA-11","STA-14",
+      "TVM-01","TVM-02","TVM-03",
+      "GRC-03","GRC-07",
+      "LOG-02","LOG-04","LOG-06","LOG-09","LOG-12",
+      "A&A-01","A&A-03","A&A-04","A&A-06",
+      "MDS-01","MDS-03","MDS-04","MDS-05",
+      "BCR-01","BCR-02","BCR-05","BCR-07",
+      "CCC-01"
+    ],
+    "key_missing_information": [
+      "Data sensitivity and personal data usage",
+      "Logging scope and implementation",
+      "AI and vendor inventory",
+      "User-facing scope",
+      "Responsibility model"
+    ],
+    "domains_most_affected_by_missing_info": [
+      "Data Protection",
+      "Logging & Monitoring",
+      "Governance",
+      "Supply Chain"
+    ]
+  },
+  "reviewed_control_ids": [
+    "IAM-01","IAM-02","IAM-04","IAM-05","IAM-06","IAM-07","IAM-16",
+    "DSP-01","DSP-02","DSP-03","DSP-04","DSP-07","DSP-12","DSP-15","DSP-16","DSP-17","DSP-19",
+    "UEM-01","UEM-04","UEM-05","UEM-06","UEM-07","UEM-08","UEM-09","UEM-10",
+    "AIS-01","AIS-08","AIS-09",
+    "STA-01","STA-02","STA-03","STA-08","STA-09","STA-10","STA-11","STA-14",
+    "TVM-01","TVM-02","TVM-03","TVM-12",
+    "GRC-01","GRC-02","GRC-03","GRC-06","GRC-07","GRC-09",
+    "LOG-01","LOG-02","LOG-04","LOG-06","LOG-07","LOG-08","LOG-09","LOG-12",
+    "A&A-01","A&A-03","A&A-04","A&A-06",
+    "MDS-01","MDS-03","MDS-04","MDS-05",
+    "BCR-01","BCR-02","BCR-05","BCR-07",
+    "CCC-01"
+  ],
+  "out_of_scope_control_ids": [],
+  "handoff_to_missing_info_agent": {
+    "requires_missing_info_check": true,
+    "missing_dependencies_to_check": [
+      "Sensitive data presence",
+      "Logging scope",
+      "Inventory existence",
+      "User exposure",
+      "Governance responsibility model"
+    ],
+    "notes": "Large number of controls depend on unresolved foundational context."
+  }
+}

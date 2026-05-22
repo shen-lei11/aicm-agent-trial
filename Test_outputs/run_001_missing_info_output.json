@@ -1,0 +1,173 @@
+{
+  "workflow_state": {
+    "current_step": "missing_info_gap_check",
+    "previous_step": "base_filtering",
+    "next_recommended_step": "user_answers_missing_info",
+    "can_proceed_to_validation": false,
+    "loop_required": true
+  },
+  "critical_missing_information": [
+    {
+      "missing_information": "Data sensitivity and presence of personal/sensitive data",
+      "question_to_ask": "Does the AI system process personal, sensitive, customer, employee, or confidential data?",
+      "why_it_matters": "Drives applicability of key data protection, privacy, encryption, and compliance controls.",
+      "affected_controls": ["DSP-03","DSP-04","DSP-07","DSP-16","DSP-17","DSP-12","DSP-15","IAM-01","LOG-01","STA-01"],
+      "affected_domains": ["Data Protection","Governance","IAM","Logging & Monitoring","Supply Chain"],
+      "affected_agents": ["Base Set Filtering Agent","Threat Technique Agent","CIS Mapping Agent"],
+      "criticality": "High"
+    },
+    {
+      "missing_information": "Deployment status of the AI system",
+      "question_to_ask": "Is the AI system currently in concept, prototype, pilot, or production?",
+      "why_it_matters": "Determines whether operational, monitoring, resilience, and incident response controls apply.",
+      "affected_controls": ["LOG-01","LOG-07","LOG-08","BCR-01","BCR-02","TVM-01","AIS-01","IAM-01"],
+      "affected_domains": ["Logging & Monitoring","Business Continuity","Threat Management","Application Security","IAM"],
+      "affected_agents": ["Production Filtering Agent","Base Set Filtering Agent"],
+      "criticality": "High"
+    },
+    {
+      "missing_information": "Logging and monitoring implementation maturity",
+      "question_to_ask": "Are prompts, inputs, outputs, agent actions, and API calls logged and actively monitored?",
+      "why_it_matters": "Directly affects observability, auditability, and detection capabilities for agent behaviour.",
+      "affected_controls": ["LOG-01","LOG-07","LOG-08","LOG-02","LOG-04","LOG-09","LOG-12"],
+      "affected_domains": ["Logging & Monitoring","IAM","Threat Management"],
+      "affected_agents": ["Base Set Filtering Agent","Threat Technique Agent"],
+      "criticality": "High"
+    },
+    {
+      "missing_information": "Existence of AI system and supply chain inventory",
+      "question_to_ask": "Is there an inventory of AI systems, data assets, and third-party/vendor components (e.g., models, frameworks, APIs)?",
+      "why_it_matters": "Inventory is foundational for governance, supply chain risk, and asset-level control scoping.",
+      "affected_controls": ["DSP-03","STA-08","STA-09","GRC-01","GRC-02"],
+      "affected_domains": ["Data Protection","Supply Chain","Governance"],
+      "affected_agents": ["Base Set Filtering Agent"],
+      "criticality": "High"
+    },
+    {
+      "missing_information": "Model usage pattern (training, fine-tuning, or API consumption)",
+      "question_to_ask": "Is the organization training/fine-tuning models or only consuming external models (e.g., Claude via API)?",
+      "why_it_matters": "Determines applicability of model lifecycle, training pipeline, and data integrity controls.",
+      "affected_controls": ["MDS-01","MDS-03","MDS-04","MDS-05","DSP-07","TVM-12"],
+      "affected_domains": ["Model Security","Data Protection","Threat Management"],
+      "affected_agents": ["Base Set Filtering Agent","Threat Technique Agent"],
+      "criticality": "High"
+    },
+    {
+      "missing_information": "User-facing exposure of the AI system",
+      "question_to_ask": "Is the AI system internal-facing, employee-facing, or exposed to customers/public users?",
+      "why_it_matters": "Impacts risk level, abuse scenarios, monitoring scope, and acceptable use policies.",
+      "affected_controls": ["GRC-09","AIS-09","LOG-01","TVM-12"],
+      "affected_domains": ["Governance","Application Security","Logging & Monitoring","Threat Management"],
+      "affected_agents": ["Threat Technique Agent","Base Set Filtering Agent"],
+      "criticality": "Medium"
+    }
+  ],
+  "non_critical_missing_information": [
+    {
+      "missing_information": "Level of agent autonomy and human oversight",
+      "question_to_ask": "Do agents operate autonomously or require human approval for high-impact actions?",
+      "why_it_matters": "Impacts applicability of human-in-the-loop and authorization controls.",
+      "affected_controls": ["GRC-09","IAM-16"],
+      "affected_domains": ["Governance","IAM"],
+      "criticality": "Medium"
+    },
+    {
+      "missing_information": "Detailed tool/plugin/API integration scope",
+      "question_to_ask": "What types of tools, plugins, or APIs can the agents invoke (internal systems, external SaaS, databases, etc.)?",
+      "why_it_matters": "Improves threat modelling accuracy and agent boundary security decisions.",
+      "affected_controls": ["AIS-01","AIS-08","STA-03","STA-09"],
+      "affected_domains": ["Application Security","Supply Chain"],
+      "criticality": "Medium"
+    },
+    {
+      "missing_information": "Hosting environment (cloud provider, on-prem, hybrid)",
+      "question_to_ask": "Where is the AI system hosted (cloud provider, on-premises, hybrid)?",
+      "why_it_matters": "Affects infrastructure, network, and shared responsibility scoping.",
+      "affected_controls": ["STA-02","STA-03","IAM-01"],
+      "affected_domains": ["Supply Chain","IAM","Infrastructure"],
+      "criticality": "Low"
+    }
+  ],
+  "client_question_set": [
+    {
+      "question_id": "Q1",
+      "question": "Does the AI system process any personal, sensitive, or confidential data?",
+      "expected_answer_type": "Yes/No/Unknown",
+      "decision_impact": "Determines applicability of all data protection and privacy-related controls.",
+      "affected_controls_or_domains": ["DSP domain","IAM","LOG","STA"]
+    },
+    {
+      "question_id": "Q2",
+      "question": "What is the current deployment status of the system (prototype, pilot, or production)?",
+      "expected_answer_type": "Free text",
+      "decision_impact": "Determines whether production-level controls apply.",
+      "affected_controls_or_domains": ["LOG","BCR","TVM","AIS"]
+    },
+    {
+      "question_id": "Q3",
+      "question": "Are inputs, outputs, agent actions, and API calls logged and monitored?",
+      "expected_answer_type": "Yes/No/Unknown",
+      "decision_impact": "Determines logging, monitoring, and audit control applicability.",
+      "affected_controls_or_domains": ["LOG domain"]
+    },
+    {
+      "question_id": "Q4",
+      "question": "Do you maintain an inventory of AI systems, data assets, and third-party vendors/models?",
+      "expected_answer_type": "Yes/No/Unknown",
+      "decision_impact": "Impacts governance, data inventory, and supply chain controls.",
+      "affected_controls_or_domains": ["DSP-03","STA-08","GRC"]
+    },
+    {
+      "question_id": "Q5",
+      "question": "Are you training or fine-tuning models, or only using external models via API?",
+      "expected_answer_type": "Free text",
+      "decision_impact": "Determines applicability of model security and training controls.",
+      "affected_controls_or_domains": ["MDS","DSP","TVM"]
+    },
+    {
+      "question_id": "Q6",
+      "question": "Is the AI system exposed to end users (employees, customers, or public), or is it internal-only?",
+      "expected_answer_type": "Free text",
+      "decision_impact": "Impacts threat exposure, acceptable use, and monitoring controls.",
+      "affected_controls_or_domains": ["GRC","AIS","LOG","TVM"]
+    }
+  ],
+  "coverage_gap_summary": {
+    "controls_blocked_by_missing_info": [
+      "DSP-03","DSP-04","DSP-07","DSP-16","DSP-17",
+      "LOG-07","LOG-08",
+      "STA-08",
+      "GRC-06","GRC-09"
+    ],
+    "domains_blocked_by_missing_info": [
+      "Data Protection",
+      "Logging & Monitoring",
+      "Supply Chain",
+      "Governance",
+      "Model Security"
+    ],
+    "base_filtering_gaps": [
+      "Data-dependent controls cannot be classified due to unknown sensitivity",
+      "Inventory-dependent controls lack confirmation",
+      "Logging-related controls lack implementation clarity"
+    ],
+    "production_filtering_gaps": [
+      "Deployment status unknown prevents lifecycle-based filtering",
+      "Operational maturity unclear"
+    ],
+    "threat_technique_filtering_gaps": [
+      "User exposure unclear limits abuse and threat scenario mapping",
+      "Tool/plugin scope not fully defined"
+    ],
+    "cis_profile_selection_gaps": [
+      "Insufficient clarity on data sensitivity and deployment maturity to select CIS profile"
+    ]
+  },
+  "rerun_plan": {
+    "after_user_answers": [
+      "Input Structuring Agent",
+      "Base Set Filtering Agent"
+    ],
+    "reason": "Updated scenario facts will materially change multiple Need More Info control decisions and downstream filtering logic."
+  }
+}

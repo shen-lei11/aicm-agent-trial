@@ -1,0 +1,4 @@
+Client is an AI/IT team implementing an agentic framework using LangChain and Claude.
+They are concerned about agent data lifecycle, governance, monitoring, and tool invocation.
+It is unclear whether personal data is processed.
+No confirmed AI inventory was mentioned.

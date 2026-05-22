@@ -1,0 +1,139 @@
+{
+  "workflow_state": {
+    "current_step": "input_structuring",
+    "next_recommended_step": "base_filtering",
+    "can_proceed_to_base_filtering": true,
+    "can_proceed_to_validation": false
+  },
+  "scenario_profile": {
+    "scenario_summary": "AI/IT team is implementing an agentic AI framework using LangChain and Claude, with concerns around data lifecycle, governance, monitoring, and tool invocation. Key details such as data sensitivity, deployment status, and system inventory remain unclear.",
+    "confirmed_facts": {
+      "client_function": "AI/IT",
+      "ai_system_type": ["Agentic AI"],
+      "technologies_or_vendors": ["LangChain", "Claude"],
+      "stated_use_case": "Agentic framework implementation",
+      "stated_concerns": [
+        "agent data lifecycle",
+        "governance",
+        "monitoring",
+        "tool invocation"
+      ],
+      "deployment_status": "Unknown",
+      "data_types": [],
+      "external_vendor_or_model_involvement": "Yes",
+      "tool_or_api_invocation": "Yes",
+      "user_facing_scope": "Unknown",
+      "autonomy_level": "Unknown",
+      "model_training_or_fine_tuning": "Unknown",
+      "logging_monitoring": "Unknown"
+    },
+    "inferred_facts": {
+      "likely_stack_components": [
+        "App",
+        "Data"
+      ],
+      "likely_lifecycle_stages": [
+        "Deployment",
+        "Delivery"
+      ],
+      "likely_threat_themes": [
+        "Sensitive data disclosure",
+        "Insecure apps/plugins",
+        "Loss of governance/compliance"
+      ],
+      "likely_control_domains": [
+        "Data governance",
+        "Monitoring and logging",
+        "Application security",
+        "Third-party/vendor risk"
+      ]
+    },
+    "unknowns": [
+      "Whether personal data or sensitive data is processed",
+      "Deployment stage (prototype, pilot, production, etc.)",
+      "Existence of AI inventory",
+      "User-facing exposure of the agentic system",
+      "Level of agent autonomy",
+      "Whether models are fine-tuned or only consumed",
+      "Extent and maturity of logging and monitoring",
+      "Specific tools/plugins/APIs integrated with agents",
+      "Cloud provider or hosting environment"
+    ]
+  },
+  "dashboard_filter_signals": {
+    "suggested_cis_profiles": [],
+    "suggested_threat_filters": [
+      "Sensitive data disclosure",
+      "Insecure apps/plugins",
+      "Loss of governance/compliance"
+    ],
+    "suggested_stack_filters": [
+      "App",
+      "Data"
+    ],
+    "suggested_lifecycle_filters": [
+      "Deployment",
+      "Delivery"
+    ],
+    "suggested_maturity_threshold": "Unknown"
+  },
+  "specialist_agent_triggers": {
+    "run_base_filtering_agent": true,
+    "run_production_filtering_agent": false,
+    "run_threat_technique_agent": false,
+    "run_missing_info_agent": true
+  },
+  "missing_information": [
+    {
+      "missing_information": "Whether personal or sensitive data is processed",
+      "why_it_matters": "Determines applicability of data protection, privacy, and sensitive data controls",
+      "affected_downstream_agent": "Base Filtering Agent"
+    },
+    {
+      "missing_information": "Deployment status of the agentic system",
+      "why_it_matters": "Controls differ significantly between prototype, pilot, and production environments",
+      "affected_downstream_agent": "Production Filtering Agent"
+    },
+    {
+      "missing_information": "Existence and completeness of AI system inventory",
+      "why_it_matters": "Impacts governance, asset management, and control coverage decisions",
+      "affected_downstream_agent": "Base Filtering Agent"
+    },
+    {
+      "missing_information": "Extent of tool/plugin/API integrations",
+      "why_it_matters": "Affects threat mapping around insecure plugins and tool invocation risks",
+      "affected_downstream_agent": "Threat Technique Agent"
+    },
+    {
+      "missing_information": "Logging and monitoring capabilities",
+      "why_it_matters": "Determines observability controls and detection coverage",
+      "affected_downstream_agent": "Base Filtering Agent"
+    },
+    {
+      "missing_information": "User-facing vs internal system exposure",
+      "why_it_matters": "Impacts risk posture and applicable controls for external access and abuse",
+      "affected_downstream_agent": "Threat Technique Agent"
+    },
+    {
+      "missing_information": "Model usage pattern (API consumption vs fine-tuning)",
+      "why_it_matters": "Affects controls related to model lifecycle, training, and supply chain risks",
+      "affected_downstream_agent": "Base Filtering Agent"
+    }
+  ],
+  "confidence_notes": {
+    "high_confidence": [
+      "Agentic AI system using LangChain and Claude",
+      "Presence of tool/API invocation concerns",
+      "Focus on governance, monitoring, and data lifecycle"
+    ],
+    "medium_confidence": [
+      "System likely involves application and data stack layers",
+      "Lifecycle stage likely around deployment or early operations"
+    ],
+    "low_confidence_or_assumptions": [
+      "Assumed threat themes based on stated concerns rather than explicit confirmation",
+      "Inferred lifecycle stages without explicit deployment status",
+      "Inferred control domains based on generalized agentic architecture patterns"
+    ]
+  }
+}

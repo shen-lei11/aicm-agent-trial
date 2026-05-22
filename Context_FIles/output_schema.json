@@ -1,25 +1,16 @@
 {
   "scenario_profile": {
-    "scenario_summary": "",
+    "scenario_summary": "...",
     "confirmed_facts": {},
     "inferred_facts": {},
-    "unknowns": []
+    "unknowns": [],
+    "dashboard_filter_signals": {},
+    "specialist_agent_triggers": {},
+    "confidence_notes": {}
   },
-  "control_decision": {
-    "control_id": "",
-    "control_title": "",
-    "control_domain": "",
-    "decision": "Keep | Proposed Remove | Need More Info | Conditional | Baseline Only | Manual Review Required | Not Applicable",
-    "confidence": "High | Medium | Low",
-    "reason": "",
-    "missing_dependency": "",
-    "source_agent": ""
-  },
-  "missing_info_question": {
-    "question_id": "",
-    "question": "",
-    "affected_fields": [],
-    "affected_controls": [],
-    "criticality": "High | Medium | Low"
+  "workflow_readiness": {
+    "ready_for_specialist_agents": true,
+    "ready_for_final_validation": false,
+    "reason": ""
   }
 }
