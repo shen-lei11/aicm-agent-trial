@@ -1,0 +1,68 @@
+control_title_provided,control_id,base_set,base_set_source
+Identity and Access Management Policy and Procedures,IAM-01,True,User-provided proper base control list
+Strong Password Policy and Procedures,IAM-02,True,User-provided proper base control list
+Separation of Duties,IAM-04,True,User-provided proper base control list
+Least Privilege,IAM-05,True,User-provided proper base control list
+User Access Provisioning,IAM-06,True,User-provided proper base control list
+User Access Changes and Revocation,IAM-07,True,User-provided proper base control list
+Authorization Mechanisms,IAM-16,True,User-provided proper base control list
+Security and Privacy Policy and Procedures,DSP-01,True,User-provided proper base control list
+Secure Disposal,DSP-02,True,User-provided proper base control list
+Data Inventory,DSP-03,True,User-provided proper base control list
+Data Classification,DSP-04,True,User-provided proper base control list
+Data Protection by Design and Default,DSP-07,True,User-provided proper base control list
+Limitation of Purpose in Personal Data Processing,DSP-12,True,User-provided proper base control list
+Limitation of Production Data Use,DSP-15,True,User-provided proper base control list
+Data Retention and Deletion,DSP-16,True,User-provided proper base control list
+Sensitive Data Protection,DSP-17,True,User-provided proper base control list
+Data Location,DSP-19,True,User-provided proper base control list
+Endpoint Devices Policy and Procedures,UEM-01,True,User-provided proper base control list
+Endpoint Inventory,UEM-04,True,User-provided proper base control list
+Endpoint Management,UEM-05,True,User-provided proper base control list
+Automatic Lock Screen,UEM-06,True,User-provided proper base control list
+Operating Systems,UEM-07,True,User-provided proper base control list
+Storage Encryption,UEM-08,True,User-provided proper base control list
+Anti-Malware Detection and Prevention,UEM-09,True,User-provided proper base control list
+Software Firewall,UEM-10,True,User-provided proper base control list
+Application and Interface Security Policy and Procedures,AIS-01,True,User-provided proper base control list
+Input Validation,AIS-08,True,User-provided proper base control list
+Output Validation,AIS-09,True,User-provided proper base control list
+Supply Chain Risk Management Policies and Procedures,STA-01,True,User-provided proper base control list
+SSRM Policy and Procedures,STA-02,True,User-provided proper base control list
+SSRM Supply Chain,STA-03,True,User-provided proper base control list
+Supply Chain Inventory,STA-08,True,User-provided proper base control list
+Supply Chain Risk Management,STA-09,True,User-provided proper base control list
+Primary Service and Contractual Agreement,STA-10,True,User-provided proper base control list
+Supply Chain Agreement Review,STA-11,True,User-provided proper base control list
+Supply Chain Governance Review,STA-14,True,User-provided proper base control list
+Threat and Vulnerability Management Policy and Procedures,TVM-01,True,User-provided proper base control list
+Malware and Malicious Instructions Protection Policy and Procedures,TVM-02,True,User-provided proper base control list
+Vulnerability Identification,TVM-03,True,User-provided proper base control list
+Threat Analysis and Modelling,TVM-12,True,User-provided proper base control list
+Governance Program Policy and Procedures,GRC-01,True,User-provided proper base control list
+Risk Management Program,GRC-02,True,User-provided proper base control list
+Organizational Policy Reviews,GRC-03,True,User-provided proper base control list
+Governance Responsibility Model,GRC-06,True,User-provided proper base control list
+Information System Regulatory Mapping,GRC-07,True,User-provided proper base control list
+Acceptable Use of the AI Service,GRC-09,True,User-provided proper base control list
+Logging and Monitoring Policy and Procedures,LOG-01,True,User-provided proper base control list
+Audit Logs Protection,LOG-02,True,User-provided proper base control list
+Audit Logs Access and Accountability,LOG-04,True,User-provided proper base control list
+Clock Synchronization,LOG-06,True,User-provided proper base control list
+Logging Scope,LOG-07,True,User-provided proper base control list
+Log Records,LOG-08,True,User-provided proper base control list
+Log Protection,LOG-09,True,User-provided proper base control list
+Access Control Logs,LOG-12,True,User-provided proper base control list
+Audit and Assurance Policy and Procedures,A&A-01,True,User-provided proper base control list
+Risk Based Planning Assessment,A&A-03,True,User-provided proper base control list
+Requirements Compliance,A&A-04,True,User-provided proper base control list
+Remediation,A&A-06,True,User-provided proper base control list
+Training Pipeline Security,MDS-01,True,User-provided proper base control list
+Model Documentation,MDS-03,True,User-provided proper base control list
+Model Documentation Requirements,MDS-04,True,User-provided proper base control list
+Model Documentation Validation,MDS-05,True,User-provided proper base control list
+Business Continuity Management Policy and Procedures,BCR-01,True,User-provided proper base control list
+Risk Assessment and Impact Analysis,BCR-02,True,User-provided proper base control list
+Documentation,BCR-05,True,User-provided proper base control list
+Communication,BCR-07,True,User-provided proper base control list
+Change Management Policy and Procedures,CCC-01,True,User-provided proper base control list

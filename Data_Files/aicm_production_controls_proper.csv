@@ -1,0 +1,48 @@
+control_title_provided,control_id,production_candidate_set,production_candidate_source
+Data Flow Documentation,DSP-05,True,User-provided production control candidate list
+Data Privacy by Design and Default,DSP-08,True,User-provided production control candidate list
+Data Protection Impact Assessment,DSP-09,True,User-provided production control candidate list
+Sensitive Data Transfer,DSP-10,True,User-provided production control candidate list
+"Personal Data Access, Reversal, Rectification and Deletion",DSP-11,True,User-provided production control candidate list
+Personal Data Sub-processing,DSP-13,True,User-provided production control candidate list
+Disclosure of Data Sub-processors,DSP-14,True,User-provided production control candidate list
+Disclosure Notification,DSP-18,True,User-provided production control candidate list
+Privacy Enhancing Technologies,DSP-22,True,User-provided production control candidate list
+Knowledge Access Control - Need to Know,IAM-17,True,User-provided production control candidate list
+Output Modification and Special Authorization,IAM-18,True,User-provided production control candidate list
+Application and Service Approval,UEM-02,True,User-provided production control candidate list
+Third-Party Endpoint Security Posture,UEM-14,True,User-provided production control candidate list
+Application Security Baseline Requirements,AIS-02,True,User-provided production control candidate list
+Application Security Metrics,AIS-03,True,User-provided production control candidate list
+Secure Application Development Lifecycle,AIS-04,True,User-provided production control candidate list
+Application Security Testing,AIS-05,True,User-provided production control candidate list
+Secure Application Deployment,AIS-06,True,User-provided production control candidate list
+Application Vulnerability Remediation,AIS-07,True,User-provided production control candidate list
+Source Code Managemement,AIS-12,True,User-provided production control candidate list
+AI Cache Protection,AIS-14,True,User-provided production control candidate list
+Vulnerability Management Reporting,TVM-09,True,User-provided production control candidate list
+Vulnerability Management Metrics,TVM-10,True,User-provided production control candidate list
+SSRM Guidance,STA-04,True,User-provided production control candidate list
+SSRM Documentation Review,STA-06,True,User-provided production control candidate list
+Security Monitoring and Alerting,LOG-03,True,User-provided production control candidate list
+Audit Logs Monitoring and Response,LOG-05,True,User-provided production control candidate list
+Encryption Monitoring and Reporting,LOG-10,True,User-provided production control candidate list
+Transaction/Activity Logging,LOG-11,True,User-provided production control candidate list
+Failures and Anomalies Reporting,LOG-13,True,User-provided production control candidate list
+Input Monitoring,LOG-14,True,User-provided production control candidate list
+Output Monitoring,LOG-15,True,User-provided production control candidate list
+Policy Exception Process,GRC-04,True,User-provided production control candidate list
+Information Security Program,GRC-05,True,User-provided production control candidate list
+Special Interest Groups,GRC-08,True,User-provided production control candidate list
+Bias and Fairness Assessment,GRC-11,True,User-provided production control candidate list
+Ethics Committee,GRC-12,True,User-provided production control candidate list
+Explainability Requirement,GRC-13,True,User-provided production control candidate list
+Explainability Evaluation,GRC-14,True,User-provided production control candidate list
+Independent Assessments,A&A-02,True,User-provided production control candidate list
+Audit Management Process,A&A-05,True,User-provided production control candidate list
+Adversarial Attack Analysis,MDS-06,True,User-provided production control candidate list
+Robustness against Adversarial Attack / Model Hardening,MDS-07,True,User-provided production control candidate list
+Model Integrity Checks,MDS-08,True,User-provided production control candidate list
+Model Signing/Ownership Verification,MDS-09,True,User-provided production control candidate list
+Model Continuous Monitoring,MDS-10,True,User-provided production control candidate list
+Secure Model Format,MDS-13,True,User-provided production control candidate list
