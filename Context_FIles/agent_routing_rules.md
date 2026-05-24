@@ -18,10 +18,10 @@ Purpose: Used by Specialist Routing Agent.
 - Scenario mentions threat concerns, LLM/GenAI, agentic AI, APIs, tools/plugins, data exposure, model failure, supply chain, or governance/compliance
 
 ## Run Missing Info Agent when
-- Any specialist agent outputs Need More Info
+- Any specialist agent outputs Needs Clarification
 - Any required scenario field remains Unknown
-- Any control is conditionally included/excluded due to assumptions
+- Any control is included/excluded due to assumptions or missing context
 
 ## Proceed to Validation only when
-- No critical Need More Info remains, OR
-- User explicitly chooses to proceed with assumptions/conditional controls.
+- No critical Needs Clarification remains, OR
+- User explicitly chooses to proceed with assumptions or missing context.

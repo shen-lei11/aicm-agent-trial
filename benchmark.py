@@ -38,8 +38,8 @@ MODELS = [
 DISCOVERY_NOTE = Path("Test_outputs/sample_discovery_note.txt").read_text(encoding="utf-8")
 
 VALID_DECISIONS = {
-    "Keep", "Proposed Remove", "Need More Info",
-    "Baseline Only", "Manual Review Required",
+    "Primary Requirement", "Secondary Recommendation",
+    "Not Applicable", "Needs Clarification",
 }
 
 EXPECTED_SCENARIO_KEYS = {
@@ -131,7 +131,7 @@ def score_filtering(result: dict) -> dict:
         dec = d.get("decision", "Unknown")
         spread[dec if isinstance(dec, str) else str(dec)] = spread.get(dec, 0) + 1
     validity_pct = round(len(valid) / total * 100, 1)
-    fallback_pct = spread.get("Manual Review Required", 0) / total
+    fallback_pct = spread.get("Needs Clarification", 0) / total
     quality_bonus = round((1 - fallback_pct) * 30, 1)
     return {
         "total_controls": total,
@@ -464,7 +464,12 @@ def print_decisions_by_model(results: list[dict]):
             for d in decisions:
                 dec = d.get("decision", "Unknown")
                 groups.setdefault(dec, []).append(d)
-            order = ["Keep", "Baseline Only", "Need More Info", "Manual Review Required", "Proposed Remove"]
+            order = [
+                "Primary Requirement",
+                "Secondary Recommendation",
+                "Needs Clarification",
+                "Not Applicable",
+            ]
             for dec_type in order:
                 items = groups.get(dec_type, [])
                 if not items:

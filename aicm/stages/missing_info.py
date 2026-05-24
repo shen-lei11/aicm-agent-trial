@@ -85,7 +85,7 @@ def _ensure_nmi_coverage(gap_analysis: dict, base_filtering_output: dict) -> Non
     """For every NMI control not already covered, add a fallback question."""
     decisions = base_filtering_output.get("decisions", [])
     nmi_controls = [
-        d for d in decisions if d.get("decision") == "Need More Info"
+        d for d in decisions if d.get("decision") == "Needs Clarification"
     ]
     if not nmi_controls:
         return
@@ -133,7 +133,7 @@ def _ensure_nmi_coverage(gap_analysis: dict, base_filtering_output: dict) -> Non
                 "source": "nmi_control",
                 "question": question_text,
                 "expected_answer_type": "Free text",
-                "decision_impact": f"Answer will determine whether {cid} should be Keep or Proposed Remove.",
+                "decision_impact": f"Answer will determine whether {cid} is Primary Requirement, Secondary Recommendation, or Not Applicable.",
                 "affected_controls_or_domains": [cid],
             })
             covered.add(cid)

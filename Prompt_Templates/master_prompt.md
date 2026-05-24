@@ -33,7 +33,7 @@ You require access to these explicit files to run specific stages:
 - Input: Scenario Profile JSON + Stage 2 files.
 - Action: Call the Base Set Filtering Agent. Evaluate the base controls.
 - CRITICAL MATHEMATICAL GUARDRAIL: You must verify that:
-  Total Reviewed = Keep + Proposed Remove + Need More Info + Baseline Only + Manual Review Required.
+  Total Reviewed = Primary Requirement + Secondary Recommendation + Not Applicable + Needs Clarification.
 - State: Transition `active_step` to "missing_info".
 
 #### STEP 4: MISSING INFO DETECTION

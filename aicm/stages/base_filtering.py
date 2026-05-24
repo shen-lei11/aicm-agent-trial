@@ -52,9 +52,9 @@ def _run_batch(batch_controls: list[dict], scenario_profile: dict, control_appli
         decisions = []
 
     if not decisions:
-        # Fallback: mark all as "Manual Review Required"
+        # Fallback: mark all as "Needs Clarification"
         decisions = [
-            {"control_id": c.get("Control ID", "?"), "decision": "Manual Review Required"}
+            {"control_id": c.get("control_id", "?"), "decision": "Needs Clarification"}
             for c in batch_controls
         ]
 
@@ -68,22 +68,22 @@ def _run_batch(batch_controls: list[dict], scenario_profile: dict, control_appli
         if not isinstance(d, dict):
             continue
         cid = d.get("control_id", d.get("Control ID", "?"))
-        dec = d.get("decision", "Manual Review Required")
-        # LLM sometimes returns decision as a nested dict e.g. {"label": "Keep"}
+        dec = d.get("decision", "Needs Clarification")
+        # LLM sometimes returns decision as a nested dict e.g. {"label": "Primary Requirement"}
         if isinstance(dec, dict):
-            dec = dec.get("label", dec.get("decision", "Manual Review Required"))
+            dec = dec.get("label", dec.get("decision", "Needs Clarification"))
         if isinstance(cid, dict):
             cid = cid.get("id", str(cid))
         d["control_id"] = str(cid)
         d["decision"] = str(dec)
         normalised.append(d)
 
-    control_ids_in_batch = {c.get("Control ID", "") for c in batch_controls}
+    control_ids_in_batch = {c.get("control_id", "") for c in batch_controls}
     decision_ids = {d["control_id"] for d in normalised}
     missing_ids = control_ids_in_batch - decision_ids
 
     for missing_id in missing_ids:
-        normalised.append({"control_id": missing_id, "decision": "Manual Review Required"})
+        normalised.append({"control_id": missing_id, "decision": "Needs Clarification"})
 
     return normalised
 

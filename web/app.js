@@ -168,8 +168,13 @@ class AIMMOrchestrator {
         const decisions = result.filtered_controls?.decisions || [];
         const questions = result.gap_analysis?.client_question_set || [];
 
-        // Group by decision type (skip Proposed Remove)
-        const groups = { Keep: [], "Baseline Only": [], "Need More Info": [], "Manual Review Required": [] };
+        // Group by decision type (new priority tiers)
+        const groups = {
+            "Primary Requirement": [],
+            "Secondary Recommendation": [],
+            "Needs Clarification": [],
+            "Not Applicable": [],
+        };
         for (const d of decisions) {
             if (d.decision in groups) groups[d.decision].push(d);
         }
@@ -186,18 +191,18 @@ class AIMMOrchestrator {
         let html = `
         <div class="results-summary">
             <div class="summary-stat"><span class="stat-num">${decisions.length}</span><span class="stat-label">Assessed</span></div>
-            <div class="summary-stat s-keep"><span class="stat-num">${groups.Keep.length}</span><span class="stat-label">Keep</span></div>
-            <div class="summary-stat s-baseline"><span class="stat-num">${groups["Baseline Only"].length}</span><span class="stat-label">Baseline</span></div>
-            <div class="summary-stat s-nmi"><span class="stat-num">${groups["Need More Info"].length}</span><span class="stat-label">Need Info</span></div>
+            <div class="summary-stat s-keep"><span class="stat-num">${groups["Primary Requirement"].length}</span><span class="stat-label">Primary</span></div>
+            <div class="summary-stat s-baseline"><span class="stat-num">${groups["Secondary Recommendation"].length}</span><span class="stat-label">Secondary</span></div>
+            <div class="summary-stat s-nmi"><span class="stat-num">${groups["Needs Clarification"].length}</span><span class="stat-label">Needs Clarification</span></div>
             <div class="summary-stat s-q"><span class="stat-num">${questions.length}</span><span class="stat-label">Questions</span></div>
         </div>`;
 
-        // Keep section
-        if (groups.Keep.length) {
+        // Primary Requirement section
+        if (groups["Primary Requirement"].length) {
             html += `<div class="result-section">
-                <h3 class="sec-hdr hdr-keep">Controls to Keep (${groups.Keep.length})</h3>
+                <h3 class="sec-hdr hdr-keep">Primary Requirements (${groups["Primary Requirement"].length})</h3>
                 <p class="sec-desc">Directly triggered by your scenario</p>
-                ${groups.Keep.map(d => `
+                ${groups["Primary Requirement"].map(d => `
                 <div class="ctrl-row">
                     <span class="ctrl-id">${d.control_id}</span>
                     <span class="ctrl-title">${d.control_title || ""}</span>
@@ -207,12 +212,12 @@ class AIMMOrchestrator {
             </div>`;
         }
 
-        // Baseline Only section
-        if (groups["Baseline Only"].length) {
+        // Secondary Recommendation section
+        if (groups["Secondary Recommendation"].length) {
             html += `<div class="result-section">
-                <h3 class="sec-hdr hdr-baseline">Baseline Controls (${groups["Baseline Only"].length})</h3>
-                <p class="sec-desc">Universal — apply to every organisation regardless of scenario</p>
-                ${groups["Baseline Only"].map(d => `
+                <h3 class="sec-hdr hdr-baseline">Secondary Recommendations (${groups["Secondary Recommendation"].length})</h3>
+                <p class="sec-desc">Universal best practices and governance hygiene</p>
+                ${groups["Secondary Recommendation"].map(d => `
                 <div class="ctrl-row">
                     <span class="ctrl-id">${d.control_id}</span>
                     <span class="ctrl-title">${d.control_title || ""}</span>
@@ -221,12 +226,12 @@ class AIMMOrchestrator {
             </div>`;
         }
 
-        // Need More Info section — with linked questions
-        if (groups["Need More Info"].length) {
+        // Needs Clarification section — with linked questions
+        if (groups["Needs Clarification"].length) {
             html += `<div class="result-section">
-                <h3 class="sec-hdr hdr-nmi">Need More Info (${groups["Need More Info"].length})</h3>
+                <h3 class="sec-hdr hdr-nmi">Needs Clarification (${groups["Needs Clarification"].length})</h3>
                 <p class="sec-desc">Cannot be decided until the questions below are answered</p>
-                ${groups["Need More Info"].map(d => {
+                ${groups["Needs Clarification"].map(d => {
                     const qs = ctrlQ[d.control_id] || [];
                     return `<div class="ctrl-row nmi-row">
                         <span class="ctrl-id">${d.control_id}</span>
@@ -270,7 +275,7 @@ class AIMMOrchestrator {
             if (nmiQs.length) {
                 html += `<div class="result-section">
                     <h3 class="sec-hdr hdr-nmi">Control Clarifications Needed (${nmiQs.length})</h3>
-                    <p class="sec-desc">One question per "Need More Info" control — answers will resolve its decision</p>
+                    <p class="sec-desc">One question per "Needs Clarification" control — answers will resolve its decision</p>
                     ${nmiQs.map(renderQBlock).join("")}
                 </div>`;
             }

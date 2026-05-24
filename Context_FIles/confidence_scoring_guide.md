@@ -9,8 +9,8 @@
 ## Low confidence
 - Weak inference only, or based on broad category matching.
 
-## Need More Info
+## Needs Clarification
 - A critical field is unknown and materially changes the decision.
 
 ## Validation rule
-Controls with only low confidence should not be Strongly Recommended. They should be Conditional, Baseline Only, or Manual Review Required.
+Controls with only low confidence should not be Strongly Recommended. They should be Secondary Recommendation or Needs Clarification.

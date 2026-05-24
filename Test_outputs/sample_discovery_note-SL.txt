@@ -1,0 +1,22 @@
+Client: Mid-size healthcare SaaS provider. The AI/IT team is building an internal agentic system to assist support analysts with ticket triage and draft responses.
+
+Current state:
+- Deployment: Active Development (pilot starts in 6 weeks).
+- Users: Internal Employees only (support and compliance teams).
+- AI system type: Retrieval-augmented LLM + agent tools (LangChain orchestration).
+- Model: Claude 3.5 Sonnet via API; no fine-tuning or training on proprietary data.
+- Tools/APIs: Jira (ticket updates), Salesforce (case summaries), internal KB search, Slack notifications.
+- Data types processed: support tickets, customer names/emails, account IDs, chat transcripts; no PHI confirmed but may contain PII.
+- Logging/monitoring: basic request logs in Datadog; no model output redaction or audit trail yet.
+- Governance: no formal model risk assessment; no documented data retention policy for AI outputs.
+
+Concerns stated by client:
+- Data lifecycle and retention for agent outputs
+- Tool invocation safety (preventing unauthorized Jira updates)
+- Monitoring and detection of data leakage in model prompts/outputs
+- Role-based access and approvals for automated actions
+
+Unknowns (explicitly not confirmed):
+- Whether PHI is present in tickets
+- Whether outputs are used for automated customer communications
+- Whether any third-party vendors store prompts/outputs beyond the model provider
