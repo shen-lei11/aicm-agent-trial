@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICM Orchestrator</title>
+    <link rel="stylesheet" href="/static/style.css?v=5">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 AICM Orchestrator</h1>
+            <p class="subtitle">AI Control Matrix Scoping Engine</p>
+        </header>
+
+        <!-- Phase 1: Input & Preflight -->
+        <section id="phase-input" class="phase active">
+            <div class="card">
+                <h2>Step 1: Discovery Note</h2>
+                <textarea
+                    id="discovery-note"
+                    placeholder="Paste your discovery note here..."
+                    rows="8"
+                ></textarea>
+
+                <h2>Pre-flight Questions</h2>
+                <div class="preflight-chips">
+                    <label class="chip">
+                        <input type="checkbox" value="Q1" />
+                        Personal/Sensitive Data?
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" value="Q2" />
+                        Production System?
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" value="Q3" />
+                        Model Training?
+                    </label>
+                </div>
+
+                <button id="btn-start" class="btn btn-primary">Start Pipeline</button>
+            </div>
+        </section>
+
+        <!-- Phase 2: Running Progress -->
+        <section id="phase-running" class="phase">
+            <div class="card">
+                <h2>Progress</h2>
+                <div id="progress-log" class="progress-log"></div>
+            </div>
+        </section>
+
+        <!-- Phase 3: Questions Modal -->
+        <section id="phase-questions" class="phase">
+            <div class="modal-overlay">
+                <div class="modal">
+                    <h2>Additional Information Needed</h2>
+                    <div id="questions-form"></div>
+                    <button id="btn-submit-answers" class="btn btn-primary">Submit Answers</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 4: Results -->
+        <section id="phase-results" class="phase">
+            <div class="card">
+                <h2>Analysis Results</h2>
+                <div id="results-container"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/app.js?v=5"></script>
+</body>
+</html>

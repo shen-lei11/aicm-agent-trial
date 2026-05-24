@@ -1,0 +1,884 @@
+[
+  {
+    "model": "qwen2.5-coder:1.5b",
+    "is": {
+      "elapsed_sec": 6.8,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 44.0,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "input_structuring",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "IT Governance",
+                "decision": "Keep | Proposed Remove | Need More Info | Baseline Only | Manual Review Required",
+                "confidence": "High",
+                "reason": "The control is a foundational non-technical policy that applies universally across all corporate systems, regardless of specific tech choices.",
+                "missing_dependency": null,
+                "source_agent": "Base Set Filtering Agent"
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 1,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 0,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "input_structuring",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "IT Governance",
+                "decision": "Keep | Proposed Remove | Need More Info | Baseline Only | Manual Review Required",
+                "confidence": "High",
+                "reason": "The control is a foundational non-technical policy that applies universally across all corporate systems, regardless of specific tech choices.",
+                "missing_dependency": null,
+                "source_agent": "Base Set Filtering Agent"
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 1,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 0,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 1.8,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 1,
+        "question_quality_pct": 0,
+        "score": 10.0
+      },
+      "raw": {
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": false,
+          "loop_required": true
+        },
+        "critical_missing_information": [
+          {
+            "missing_information": "Clarify if explicit consent is collected before AI processing.",
+            "question_to_ask": "Has the customer provided explicit consent for AI data processing?",
+            "why_it_matters": "Compliance justification for why this parameter changes the matrix boundary.",
+            "affected_controls": [
+              "AI-PRIV-002"
+            ],
+            "affected_domains": [
+              "Data Governance"
+            ],
+            "affected_agents": [
+              "Base Set Filtering Agent"
+            ],
+            "criticality": "High"
+          }
+        ],
+        "non_critical_missing_information": [
+          {
+            "missing_information": "Specify the monitoring setup and incident response plan.",
+            "question_to_ask": "What is the current model monitoring setup in place?",
+            "why_it_matters": "Compliance justification for why this parameter changes the matrix boundary.",
+            "affected_controls": [
+              "AI-OPS-001",
+              "AI-OPS-002"
+            ],
+            "affected_domains": [
+              "Data Governance"
+            ],
+            "affected_agents": [
+              "Base Set Filtering Agent"
+            ],
+            "criticality": "Low"
+          }
+        ],
+        "unknowns": [
+          "Audit logging capability",
+          "Model output monitoring setup",
+          "Human-in-the-loop for edge cases",
+          "Data residency requirements",
+          "Incident response plan for AI failures"
+        ],
+        "dashboard_filter_signals": {
+          "sector": "Financial Services",
+          "deployment_scope": "Customer-Facing",
+          "risk_tier": "High",
+          "data_sensitivity": "PII + Financial",
+          "governance_maturity": "Low"
+        }
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 52.6
+  },
+  {
+    "model": "gemma4:e2b",
+    "is": {
+      "elapsed_sec": 20.4,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 220.0,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 9.9,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 0,
+        "question_quality_pct": 0,
+        "score": 0.0
+      },
+      "raw": {
+        "critical_missing_information": [],
+        "non_critical_missing_information": [],
+        "client_question_set": [],
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": true,
+          "loop_required": false
+        }
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 250.3
+  },
+  {
+    "model": "llama3.2:3b",
+    "is": {
+      "elapsed_sec": 7.1,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 68.4,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "input_structuring",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "Governance",
+                "decision": "Baseline Only",
+                "confidence": null,
+                "reason": "Found in the AICM base control list, applicable universally across all corporate systems.",
+                "missing_dependency": null,
+                "source_agent": "Base Set Filtering Agent"
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 0,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 1,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "input_structuring",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "Governance",
+                "decision": "Baseline Only",
+                "confidence": null,
+                "reason": "Found in the AICM base control list, applicable universally across all corporate systems.",
+                "missing_dependency": null,
+                "source_agent": "Base Set Filtering Agent"
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 0,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 1,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 3.8,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 0,
+        "question_quality_pct": 0,
+        "score": 0.0
+      },
+      "raw": {
+        "critical_missing_information": [],
+        "non_critical_missing_information": [],
+        "client_question_set": [],
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": true,
+          "loop_required": false
+        }
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 79.3
+  },
+  {
+    "model": "qwen2.5:3b",
+    "is": {
+      "elapsed_sec": 7.3,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 71.9,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "input_structuring",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "Policy & Procedure",
+                "decision": "Baseline Only",
+                "confidence": "High",
+                "reason": "CCC-01 is a foundational non-technical policy that applies universally across all corporate systems, regardless of specific tech choices.",
+                "missing_dependency": null,
+                "source_agent": "Base Set Filtering Agent"
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 0,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 1,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "input_structuring",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "Policy & Procedure",
+                "decision": "Baseline Only",
+                "confidence": "High",
+                "reason": "CCC-01 is a foundational non-technical policy that applies universally across all corporate systems, regardless of specific tech choices.",
+                "missing_dependency": null,
+                "source_agent": "Base Set Filtering Agent"
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 0,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 1,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 3.7,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 2,
+        "question_quality_pct": 0,
+        "score": 20.0
+      },
+      "raw": {
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": false,
+          "loop_required": true
+        },
+        "critical_missing_information": [
+          {
+            "missing_information": "Clear description of the core data or technical parameter missing.",
+            "question_to_ask": "Could you provide more details on the audit logging capability and model output monitoring setup for the AI chatbot?",
+            "why_it_matters": "Audit logging and model output monitoring are critical for compliance with regulatory requirements such as GDPR, CCPA, and FCRA. Without this information, it's impossible to determine if these controls are in place.",
+            "affected_controls": [
+              "AI-OPS-001",
+              "AI-OPS-002"
+            ],
+            "confidence_level": "High"
+          },
+          {
+            "missing_information": "Unclear data residency requirements and incident response plan for AI failures.",
+            "question_to_ask": "Could you specify the data residency requirements and outline an incident response plan for AI failures?",
+            "why_it_matters": "Data residency is crucial for compliance with regulations like GDPR. An incident response plan ensures that appropriate actions are taken in case of AI-related incidents, which is essential given the high risk tier.",
+            "affected_controls": [
+              "AI-GOV-001",
+              "AI-PHYS-001"
+            ],
+            "confidence_level": "High"
+          }
+        ],
+        "unknowns": [
+          {
+            "missing_information": "Unclear if explicit consent collected before AI processing for the 'Data Minimisation' control.",
+            "question_to_ask": "Was explicit consent obtained from users before their data was processed by the AI chatbot?",
+            "why_it_matters": "Explicit consent is required under GDPR and CCPA. Without this information, it's impossible to determine if the 'Data Minimisation' control is in place.",
+            "affected_controls": [
+              "AI-PRIV-001"
+            ],
+            "confidence_level": "Medium"
+          }
+        ],
+        "dashboard_filter_signals": {
+          "sector": "Financial Services",
+          "deployment_scope": "Customer-Facing",
+          "risk_tier": "High",
+          "data_sensitivity": "PII + Financial",
+          "governance_maturity": "Low"
+        }
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 82.9
+  },
+  {
+    "model": "phi4-mini",
+    "is": {
+      "elapsed_sec": 18.8,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 79.1,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "Governance & Compliance",
+                "decision": "Baseline Only",
+                "confidence": "High",
+                "reason": "A foundational non-technical policy that applies universally across all corporate systems.",
+                "missing_dependency": null
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 0,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 1,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "workflow_state": {
+              "current_step": "base_filtering",
+              "previous_step": "",
+              "next_recommended_step": "missing_info_gap_check",
+              "can_proceed_to_validation": false
+            },
+            "base_control_decisions": [
+              {
+                "control_id": "CCC-01",
+                "control_title": "Change Management Policy and Procedures",
+                "control_domain": "Governance & Compliance",
+                "decision": "Baseline Only",
+                "confidence": "High",
+                "reason": "A foundational non-technical policy that applies universally across all corporate systems.",
+                "missing_dependency": null
+              }
+            ],
+            "base_filtering_summary": {
+              "controls_reviewed": 1,
+              "keep": 0,
+              "proposed_remove": 0,
+              "need_more_info": 0,
+              "baseline_only": 1,
+              "manual_review_required": 0,
+              "key_missing_information": [],
+              "domains_most_affected_by_missing_info": []
+            },
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 4.3,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 2,
+        "question_quality_pct": 0,
+        "score": 20.0
+      },
+      "raw": {
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": false,
+          "loop_required": true
+        },
+        "critical_missing_information": [
+          {
+            "missing_information": "Clarification on whether explicit consent is collected before AI processing.",
+            "question_to_ask": "Does the deployment of OpenAI GPT-4 via API for loan pre-qualification involve collecting and managing user consents in compliance with GDPR/CCPA regulations?",
+            "why_it_matters": "Consent management underpins data protection laws like GDPR, which is critical to ensure legal processing of PII.",
+            "affected_controls": [
+              "AI-GOV-002",
+              "AI-PRIV-001"
+            ],
+            "criticality": "High"
+          },
+          {
+            "missing_information": "Details on the setup for model monitoring and incident response plan specific to AI failures or data breaches.",
+            "question_to_ask": "Can you provide an overview of how OpenAI GPT-4's outputs are monitored, what metrics indicate a potential issue, and describe your current process in place should there be any incidents related to this deployment?",
+            "why_it_matters": "Model monitoring is essential for maintaining the integrity and reliability of AI systems. An incident response plan ensures readiness against unforeseen events.",
+            "affected_controls": [
+              "AI-OPS-001",
+              "AI-OPS-002"
+            ],
+            "criticality": "High"
+          }
+        ],
+        "unknowns": [
+          {
+            "missing_information": "Audit logging capability for the OpenAI GPT-4 deployment and whether it complies with GDPR/CCPA data residency requirements.",
+            "question_to_ask": "Is there an audit trail that records all interactions between users, their consent status if applicable, and how is this information stored in accordance to any relevant jurisdiction's regulations?",
+            "why_it_matters": "Audit logs are crucial for accountability under privacy laws. Data residency must be managed according to the legal requirements of where data subjects reside.",
+            "affected_controls": [
+              "AI-GOV-002",
+              "AI-PHYS-001"
+            ],
+            "confidence": "Medium"
+          }
+        ]
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 102.2
+  },
+  {
+    "model": "qwen3.5:4b",
+    "is": {
+      "elapsed_sec": 13.2,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 139.8,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 7.0,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 0,
+        "question_quality_pct": 0,
+        "score": 0.0
+      },
+      "raw": {
+        "critical_missing_information": [],
+        "non_critical_missing_information": [],
+        "client_question_set": [],
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": true,
+          "loop_required": false
+        }
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 160.0
+  },
+  {
+    "model": "qwen3.5:9b",
+    "is": {
+      "elapsed_sec": 28.4,
+      "scores": {
+        "valid_json": true,
+        "key_coverage": 80,
+        "has_unknowns": false,
+        "has_inferred": false,
+        "has_summary": true,
+        "score": 70.0
+      },
+      "raw": {
+        "scenario_summary": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n",
+        "confirmed_facts": {
+          "discovery_note": "Client is an AI/IT team implementing an agentic framework using LangChain and Claude.\nThey are concerned about agent data lifecycle, governance, monitoring, and tool invocation.\nIt is unclear whether personal data is processed.\nNo confirmed AI inventory was mentioned.\n\n[Preflight Answers]\n"
+        },
+        "inferred_facts": {},
+        "unknowns": []
+      }
+    },
+    "bf": {
+      "elapsed_sec": 438.9,
+      "scores": {
+        "total_controls": 2,
+        "valid_decisions": 2,
+        "validity_pct": 100.0,
+        "decision_spread": {
+          "Manual Review Required": 2
+        },
+        "score": 70.0
+      },
+      "raw": {
+        "filtered_controls": [
+          {
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ],
+        "total_controls": 67,
+        "decisions": [
+          {
+            "control_id": "?",
+            "decision": "Manual Review Required"
+          },
+          {
+            "control_id": "",
+            "decision": "Manual Review Required"
+          }
+        ]
+      }
+    },
+    "mi": {
+      "elapsed_sec": 20.3,
+      "scores": {
+        "questions_generated": 0,
+        "critical_gaps": 0,
+        "question_quality_pct": 0,
+        "score": 0.0
+      },
+      "raw": {
+        "critical_missing_information": [],
+        "non_critical_missing_information": [],
+        "client_question_set": [],
+        "workflow_state": {
+          "current_step": "missing_info_gap_check",
+          "can_proceed_to_validation": true,
+          "loop_required": false
+        }
+      }
+    },
+    "skipped": false,
+    "total_elapsed_sec": 487.6
+  }
+]
